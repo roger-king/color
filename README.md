@@ -1,11 +1,3 @@
-# Archived project. No maintenance. 
-
-This project is not maintained anymore and is archived. Feel free to fork and
-make your own changes if needed. For more detail read my blog post: [Taking an indefinite sabbatical from my projects](https://arslan.io/2018/10/09/taking-an-indefinite-sabbatical-from-my-projects/)
-
-Thanks to everyone for their valuable feedback and contributions.
-
-
 # Color [![GoDoc](https://godoc.org/github.com/fatih/color?status.svg)](https://godoc.org/github.com/fatih/color) [![Build Status](https://img.shields.io/travis/fatih/color.svg?style=flat-square)](https://travis-ci.org/fatih/color)
 
 Color lets you use colorized outputs in terms of [ANSI Escape
@@ -13,18 +5,28 @@ Codes](http://en.wikipedia.org/wiki/ANSI_escape_code#Colors) in Go (Golang). It
 has support for Windows too! The API can be used in several ways, pick one that
 suits you.
 
+_Full Disclosure this is a forked repository of `faith/color`. It was no longer being maintained due to his leave, but I figured to take a stab and trying to keep this useful package alive!_
 
 ![Color](https://i.imgur.com/c1JI0lA.png)
-
 
 ## Install
 
 ```bash
-go get github.com/fatih/color
+	# Full Credit goes to Faith.
+	# go get github.com/fatih/color
+
+	go get github.com/roger-king/color
 ```
 
-Note that the `vendor` folder is here for stability. Remove the folder if you
-already have the dependencies in your GOPATH.
+## Development
+
+Using Go version 1.11 `go modules`
+
+```bash
+	git clone https://github.com/roger-king/color.git
+
+	go mod vendor
+```
 
 ## Examples
 
@@ -136,13 +138,13 @@ fmt.Println("All text will now be bold magenta.")
 ```
 
 ### Disable/Enable color
- 
-There might be a case where you want to explicitly disable/enable color output. the 
-`go-isatty` package will automatically disable color output for non-tty output streams 
+
+There might be a case where you want to explicitly disable/enable color output. the
+`go-isatty` package will automatically disable color output for non-tty output streams
 (for example if the output were piped directly to `less`)
 
-`Color` has support to disable/enable colors both globally and for single color 
-definitions. For example suppose you have a CLI app and a `--no-color` bool flag. You 
+`Color` has support to disable/enable colors both globally and for single color
+definitions. For example suppose you have a CLI app and a `--no-color` bool flag. You
 can easily disable the color output with:
 
 ```go
@@ -170,16 +172,14 @@ c.Println("This prints again cyan...")
 
 ## Todo
 
-* Save/Return previous values
-* Evaluate fmt.Formatter interface
-
+- Save/Return previous values
+- Evaluate fmt.Formatter interface
 
 ## Credits
 
- * [Fatih Arslan](https://github.com/fatih)
- * Windows support via @mattn: [colorable](https://github.com/mattn/go-colorable)
+- [Fatih Arslan](https://github.com/fatih)
+- Windows support via @mattn: [colorable](https://github.com/mattn/go-colorable)
 
 ## License
 
 The MIT License (MIT) - see [`LICENSE.md`](https://github.com/fatih/color/blob/master/LICENSE.md) for more details
-
